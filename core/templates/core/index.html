@@ -1,0 +1,82 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}
+<title>Index</title>
+{% endblock %}
+
+{% block header %}
+<img class="mb-4" src="{% static 'images/logo.png' %}" alt="" width="120" height="65">
+{% endblock %}
+
+{% block content %}
+<div class="top-bar">
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-3 form">
+            <form class="form-signin" method="post" autocomplete="off">
+                <div class="row">
+                    <div class="col-12">
+                        <label class="sr-only" for="inputMarca">Marca</label>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">🔍</div>
+                            </div>
+                            <select id="inputMarca" class="form-control" onchange="getIndexModels()">
+                                <option selected>Selecione uma marca</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-8">
+                        <label class="sr-only" for="inputModel">Modelo</label>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">🔍</div>
+                            </div>
+                            <select id="inputModel" class="form-control">
+                                <option selected>Selecionar um modelo</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-4 pl-0">
+                        <label class="sr-only" for="inputYear">Ano</label>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">🔍</div>
+                            </div>
+                            <select id="inputYear" class="form-control">
+                                <option selected>Ano...</option>
+                                <option>...</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-3"></div>
+                    <div class="col-6">
+                        <button type="button" class="btn btn-secondary" onclick="searchCars()">Ver Ofertas</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="middle-bar">
+    <h1 align="center">Ofertas em destaque</h1>
+
+    <div class="container">
+
+        <div class="bd-example">
+            <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+                <script>createOfferList()</script>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    getIndexBrands();
+    getYearModels();
+</script>
+{% endblock %}

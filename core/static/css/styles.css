@@ -1,0 +1,350 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+body {
+    background-color: rgb(32, 35, 36);;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    color: #d2cec8;
+}
+
+/* Header */
+
+header {
+    position: relative;
+    height: 75px;
+    max-height: 15%;
+    width: 100%;
+    background-color: #1A315E;
+    z-index: 2;
+    display: flex;
+}
+
+header a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+header .container {
+    width: 100%;
+    max-width: 100%;
+}
+
+header .row {
+    margin: 0px;
+    max-height: 100%;
+}
+
+header .row .col-3 {
+    padding-top: 5px;
+}
+
+header .row .col-7 {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-bottom: 20px;
+}
+
+header .row .col-7 a {
+    text-decoration: none;
+    color: white;
+    font-size: 26px;
+}
+
+.app {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.top-bar {
+    width: 100vw;
+    height: 50vh;
+    max-height: 400px;
+    background-image: url("https://storage.googleapis.com/assets.usadosbr.com/painel-revenda/websites/26e359e83860db1d11b6acca57d8ea88/1c673cbbaf04e813327fa088910eb4b3.png");
+    background-position: center; 
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+    display: flex;
+    align-items: center;
+}
+
+.top-bar .row {
+    margin: 0;
+    width: 100%;
+}
+
+.top-bar form {
+    height: 250px;
+    width: 450px;
+    padding-top: 30px;
+    background-image: initial;
+    background-color: rgba(24, 26, 27, 0.85);
+    border-radius: 8px;
+}
+
+.top-bar form select,
+.top-bar form button,
+.top-bar form .input-group-prepend {
+    margin-top: 15px;
+}
+
+.top-bar form button {
+    width: 100%;
+}
+
+.middle-bar {
+    margin-top: 20px;
+    max-width: 90%;
+}
+
+.middle-bar > .container{
+    width: 1200px;
+    height: 400px;
+    max-width: 100%;
+}
+
+.middle-bar > .container > .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.middle-bar .col-3 {
+    background-color: #181a1b;
+    border-radius: 8px;
+    max-width: 24%;
+}
+
+.middle-bar .col-3 > .row {
+    margin: 0px;
+}
+
+.middle-bar .col-3 > .row > .col-4 {
+    margin: 0px;
+    padding: 0px;
+}
+
+.middle-bar img {
+    width: 100%;
+    border-radius: 8px 8px 0px 0px;
+}
+
+.active > .row {
+    justify-content: space-around;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.carousel-control-next, .carousel-control-prev {
+    width: 5%;
+    opacity: 1;
+}
+
+.carousel-indicators {
+    bottom: -45px;
+}
+
+.top-filters {
+    width: 900px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.top-filters h2 {
+    width: 400px;
+}
+
+.stock {
+    display: flex;
+    width: 95%;
+    margin-top: 30px;
+    /*align-items: center;*/
+    justify-content: center;
+}
+
+.stock > .left-menu {
+    width: 400px;
+    height: 920px;
+    background-color: #181a1b;
+    border-radius: 16px;
+    border: 1px solid #1A315E;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.left-menu > .state {
+    margin-top: 30px;
+}
+.state > .row > .col-5 >  .new,
+.state > .row > .col-4 >  .used {
+    display: flex;
+    align-items: baseline;
+    margin-top: 15px;
+}
+
+.state > .row > .col-5 > .new > h6,
+.state > .row > .col-4 > .used > h6 {
+    margin-left: 5px;
+}
+
+.left-menu > .input-group {
+    margin-top: 10px;
+}
+
+.stock > .container {
+    margin-left: 50px;
+    border-radius: 16px;
+    margin-right: 0;
+}
+
+.stock > .container > #container-cars {
+    max-height: 90%;
+}
+
+.stock > .container > #container-cars > .row {
+    justify-content: space-evenly;
+    margin-bottom: 40px;
+}
+
+.div-car {
+    border-radius: 16px;
+    height: 400px;
+    max-width: 24%;
+    background-color: #181a1b;
+    border: 1px solid #1A315E;
+    padding: 0px;
+}
+
+.div-car img {
+    border-radius: 8px 8px 0px 0px;
+    max-height: 100%;
+}
+
+.stock > .container > .paginator {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    width: 1100px;
+    max-width: 1100px;
+    height: 7%;
+    max-height: 10%;
+    align-items: center;
+    justify-content: center;
+}
+
+.stock > .container > .paginator li {
+    cursor: pointer;
+}
+
+.stock > .container > .paginator .disabled {
+    cursor:auto
+}
+
+.bt-5 {
+    position: absolute;
+    bottom: 10;
+}
+
+.bt-45 {
+    position: absolute;
+    bottom: 55;
+}
+
+.image {
+    max-height: 40%;
+}
+
+.mt-15 {
+    margin-top: 15px;
+}
+
+.ml-5 {
+    margin-left: 5px !important;
+}
+
+.flex {
+    display: flex;
+}
+
+.baseline {
+    align-items: baseline;
+}
+
+.pr-0 {
+    padding-right: 0px;
+}
+
+.pr-15 {
+    padding-right: 15px;
+}
+
+.pl-0 {
+    padding-left: 0px;
+}
+
+.pl-15 {
+    padding-left: 15px;
+}
+
+.wd-100 {
+    width: 100%;
+}
+
+@media (max-width: 1546px) {
+    .stock > .container > .paginator {
+        width: 1000px;
+    }
+}
+
+@media (max-width: 1426px) {
+    .stock > .container > .paginator {
+        width: 900px;
+    }
+}
+
+@media (max-width: 1296px) {
+    .stock > .container > .paginator {
+        width: 800px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .stock > .container > .paginator {
+        width: 650px;
+    }
+}
+
+
+@media (max-width: 1488px) {
+    #container-cars > .row > .col-3 > h4 {
+        font-size: 22px;   
+    }
+}
+
+@media (max-width: 1365px) {
+    #container-cars > .row > .col-3 > h4 {
+        font-size: 20px;   
+    }
+}
+
+@media (max-width: 1300px) {
+    #container-cars > .row > .col-3 > h4 {
+        font-size: 18px;   
+    }
+}

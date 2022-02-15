@@ -1,0 +1,214 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}
+<title>Index</title>
+{% endblock %}
+
+{% block header %}
+<img class="mb-4" src="{% static 'images/logo.png' %}" alt="" width="120" height="65">
+{% endblock %}
+
+{% block content %}
+<div class="top-filters">
+    <h2>Ofertas disponíveis</h2>
+    <div class="row">
+        <div class="col-12">
+            <select id="inputOrder" class="form-control" onchange="updateFilter()">
+                <option selected>Ordenar por Relevância</option>
+                <option value="1">Preço Menor a Maior </option>
+                <option value="2">Preço Maior a Menor </option>
+            </select>
+        </div>
+    </div>
+</div>
+<div class="stock">
+    <div class="left-menu">
+        <br>
+        <h5>Filtros</h5>
+        <div class="state">
+            <h5>Estado do veiculo</h5>
+            <div class="row ml-5">
+                <div class="col-5">
+                    <div class="new">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioNew">
+                        <label class="form-check-label" for="flexRadioNew">
+                            <h6>0 Km</h6>
+                        </label>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="used">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioUsed">
+                        <label class="form-check-label" for="flexRadioUsed">
+                            <h6>Usado</h6>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="input-group mb-3">
+            <div class="col-12 pr-0 pl-0">
+                <select id="inputMarca" class="form-control" onchange="getModels()">
+                    <option selected>Selecionar Marca</option>
+                </select>
+            </div>
+        </div>
+        <div class="input-group mb-3">
+            <div class="col-12 pr-0 pl-0">
+                <select id="inputModel" class="form-control">
+                    <option selected>Selecionar Modelo</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <div class="input-group">
+                    <input type="number" id="minYear" min="0" class="form-control" placeholder="Ano inicial">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="input-group">
+                    <input type="number" id="maxYear" class="form-control" placeholder="Ano final">
+                    <script> var now = new Date; var maxYear = document.getElementById("maxYear"); maxYear.max = now.getFullYear();</script>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-15">
+            <div class="col-6">
+                <div class="input-group">
+                    <input type="number" id="minPrice" min="0" class="form-control" placeholder="Preço min">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="input-group">
+                    <input type="number" id="maxPrice" class="form-control" placeholder="Preço max">
+                </div>
+            </div>
+        </div>
+        <div class="row mt-15">
+            <div class="col-12">
+                <select id="inputColor" class="form-control">
+                    <option selected>Selecionar Cor</option>
+                </select>
+            </div>
+        </div>
+        <div class="row mt-15">
+            <div class="col-12">
+                <select id="inputCategory" class="form-control">
+                    <option selected>Selecionar Categoria</option>
+                </select>
+            </div>
+        </div><br>
+        <h5 class="mt-15">Câmbio</h5>
+        <div class="row mt-15">
+            <div class="col-4 pr-0">
+                <div class="input-group baseline">
+                    <input type="checkbox" id="manual">
+                    <h6 class="ml-5">Manual</h6>
+                </div>
+            </div>
+            <div class="col-7">
+                <div class="input-group baseline">
+                    <input type="checkbox" id="automatico">
+                    <h6 class="ml-5">Automatico</h6>
+                </div>
+            </div>
+            <div class="col-4 pr-0">
+                <div class="input-group baseline">
+                    <input type="checkbox" id="cvt">
+                    <h6 class="ml-5">CVT</h6>
+                </div>
+            </div>
+            <div class="col-7 pr-0">
+                <div class="input-group baseline">
+                    <input type="checkbox" id="semi-automatico">
+                    <h6 class="ml-5">Semi-Automatico</h6>
+                </div>
+            </div>
+        </div><br>
+        <h5 class="mt-15">Combustível</h5>
+        <div class="row mt-15">
+            <div class="col-4 pr-0">
+                <div class="input-group baseline">
+                    <input type="checkbox" id="diesel">
+                    <h6 class="ml-5">Diesel</h6>
+                </div>
+            </div>
+            <div class="col-7">
+                <div class="input-group baseline">
+                    <input type="checkbox" id="gasolina">
+                    <h6 class="ml-5">Gasolina</h6>
+                </div>
+            </div>
+            <div class="col-4 pr-0">
+                <div class="input-group baseline">
+                    <input type="checkbox" id="ag">
+                    <h6 class="ml-5">Á/G</h6>
+                </div>
+            </div>
+            <div class="col-7 pr-0">
+                <div class="input-group baseline">
+                    <input type="checkbox" id="alcool">
+                    <h6 class="ml-5">Álcool</h6>
+                </div>
+            </div>
+        </div><br>
+        <h5 class="mt-15">Portas</h5>
+        <div class="row mt-15">
+            <div class="col-2 pr-0">
+                <div class="input-group baseline">
+                    <input type="checkbox" id="portas-2">
+                    <h6 class="ml-5">2</h6>
+                </div>
+            </div>
+            <div class="col-2 pr-0">
+                <div class="input-group baseline">
+                    <input type="checkbox" id="portas-3">
+                    <h6 class="ml-5">3</h6>
+                </div>
+            </div>
+            <div class="col-2 pr-0">
+                <div class="input-group baseline">
+                    <input type="checkbox" id="portas-4">
+                    <h6 class="ml-5">4</h6>
+                </div>
+            </div>
+            <div class="col-2 pr-0">
+                <div class="input-group baseline">
+                    <input type="checkbox" id="portas-5">
+                    <h6 class="ml-5">5</h6>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-15">
+            <div class="col-6 ">
+                <button class="btn btn-secondary wd-100">
+                    Limpar
+                </button>
+            </div>
+            <div class="col-6">
+                <button class="btn btn-warning wd-100" onclick="updateFilter()">
+                    Filtrar
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div id="container-cars">
+
+        </div>
+        <div class="paginator" id="paginator">
+            
+        </div>
+        <script>
+            getCars();
+            getBrands();
+            getModels();
+            getCategories();
+            getColors();
+        </script>
+    </div>
+
+</div>
+{% endblock %}

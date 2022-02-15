@@ -1,0 +1,41 @@
+{% load static %}
+{% load bootstrap4 %}
+
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/25828b76a5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <script src="{% static 'js/functions.js' %}"></script>
+    {% block title %} {% endblock %}
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    {% block header %} {% endblock %}
+                </div>
+                <div class="col-7">
+                    <a href="{% url 'index' %}">Inicio</a>
+                    <a href="{% url 'estoque' %}">Estoque</a>
+                    <a href="#">Sobre</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="app">
+        {% block content %}
+    
+        {% endblock %}
+    </div>
+</body>
+{% bootstrap_javascript jquery='full' %} 
+</html>
