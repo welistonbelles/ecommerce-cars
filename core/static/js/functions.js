@@ -21,7 +21,7 @@ function createCarList(data) {
                             <div class="col-7 pr-0">
                                 <p class="pl-15"><i class="far fa-stop-circle"></i> ${car.exchange}</p>
                             </div>
-                            <div class="col-5" align="end">
+                            <div class="col-5 pl-0" align="end">
                                 <p class="pr-15"><i class="fas fa-gas-pump"></i> ${car.fuel}</p>
                             </div>
                         </div>
@@ -44,10 +44,10 @@ function createCarList(data) {
                         <img src="${car.image}" class="d-block w-100">
                         <br><h4 class="pl-15">${car.brand} ${car.model}</h4>
                         <div class="row">
-                            <div class="col-6">
+                            <div class="col-7">
                                 <p class="pl-15"><i class="far fa-stop-circle"></i> ${car.exchange}</p>
                             </div>
-                            <div class="col-6" align="end">
+                            <div class="col-5 pl-0" align="end">
                                 <p class="pr-15"><i class="fas fa-gas-pump"></i> ${car.fuel}</p>
                             </div>
                         </div>
