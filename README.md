@@ -72,14 +72,14 @@ Além disso é bom ter um editor para trabalhar com o código como o [VSCode](ht
 $ git clone <https://github.com/welistonbelles/ecommerce-cars>
 
 # Acesse a pasta do projeto no terminal/cmd
-$ cd ecomerce-cars
+$ cd ecommerce-cars
 
 # Instale as dependências
 $ pip install -r requirements.txt
 ```
 ### 🔧 Configuracao
 ```python
-# Conecte o arquivo ecomerce.sql com o seu banco de dados MySQL.
+# Conecte o arquivo ecommerce.sql com o seu banco de dados MySQL.
 
 # Abra o arquivo config/settings.py e nesta parte configure de acordo com seu banco de dados
 DATABASES = {
