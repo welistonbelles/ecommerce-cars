@@ -533,3 +533,31 @@ function searchCars() {
     let url = `http://127.0.0.1:8000/estoque/?page=1${checkIndexBrand()}${checkIndexModel()}${checkIndexYear()}`
     window.location.href = url
 }
+
+function cleanFilters() {
+    document.getElementById('flexRadioNew').checked = false;
+    document.getElementById('flexRadioUsed').checked = false;
+    document.getElementById('inputMarca').selectedIndex = 0;
+    document.getElementById('inputModel').selectedIndex = 0;
+    document.getElementById('minYear').value = '';
+    document.getElementById('maxYear').value = '';
+    document.getElementById('minPrice').value = '';
+    document.getElementById('maxPrice').value = '';
+    document.getElementById('inputColor').selectedIndex = 0;
+    document.getElementById('inputCategory').selectedIndex = 0;
+    document.getElementById('manual').checked = false;
+    document.getElementById('automatico').checked = false;
+    document.getElementById('cvt').checked = false;
+    document.getElementById('semi-automatico').checked = false;
+    document.getElementById('diesel').checked = false;
+    document.getElementById('gasolina').checked = false;
+    document.getElementById('ag').checked = false;
+    document.getElementById('alcool').checked = false;
+    document.getElementById('portas-2').checked = false;
+    document.getElementById('portas-3').checked = false;
+    document.getElementById('portas-4').checked = false;
+    document.getElementById('portas-5').checked = false;
+
+
+    getCars('?page=1')
+}
