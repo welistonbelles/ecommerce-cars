@@ -167,7 +167,8 @@ class CarModelViewSet(viewsets.ReadOnlyModelViewSet):
 
 class CategoryViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Car.objects.all().order_by('id')
-    
+    serializer_class = CarSerializer
+
     def list(self, request, *args, **kwargs):
         queryset = self.filter_queryset(self.get_queryset())
         first = queryset.first()
@@ -177,6 +178,7 @@ class CategoryViewSet(viewsets.ReadOnlyModelViewSet):
 
 class ColorViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Car.objects.all().order_by('id')
+    serializer_class = CarSerializer
     
     def list(self, request, *args, **kwargs):
         queryset = self.filter_queryset(self.get_queryset())
